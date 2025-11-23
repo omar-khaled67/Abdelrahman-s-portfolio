@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdelrahman Ali Mohamed — ML Engineer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg:#0a0f1a; --card:#101827; --accent:#00d4ff; --accent2:#7c3aed; --text:#e6eef8; --muted:#94a3b8;
+}
+body { margin:0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x:hidden; scroll-behavior:smooth;}
+.container { max-width:1200px; margin:auto; padding:20px; }
+a { text-decoration:none; }
+header { display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; background:rgba(10,15,26,0.95); backdrop-filter:blur(8px); z-index:1000; padding:15px 20px; border-bottom:1px solid #1e293b; }
+nav a { color: var(--muted); margin-left:18px; font-weight:600; transition:.3s; }
+nav a:hover { color: var(--accent); }
+.hero { margin-top:50px; text-align:center; position:relative; overflow:hidden; }
+.hero h1 { font-size:46px; background: linear-gradient(90deg,var(--accent),var(--accent2)); -webkit-background-clip:text; color:transparent; }
+.lead { color: var(--muted); font-size:18px; line-height:1.7; margin-top:12px; }
+.btn { padding:12px 18px; border-radius:10px; font-weight:700; border:0; cursor:pointer; transition:.3s; }
+.btn-primary { background:linear-gradient(90deg,var(--accent),var(--accent2)); color:#000; }
+.btn-primary:hover { opacity:.85; }
+.card { background: var(--card); padding:20px; border-radius:14px; box-shadow:0 0 18px rgba(0,0,0,.35); margin-bottom:18px; transition:0.3s; }
+.card:hover { transform: translateY(-3px); box-shadow:0 0 28px rgba(0,0,0,.5); }
+.section { margin-top:60px; }
+h2 { color: var(--accent); margin-bottom:20px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px; }
+.project img, .tech img { width:100%; height:180px; object-fit:cover; border-radius:10px; margin-bottom:10px; }
+.project-title { font-weight:700; font-size:19px; margin-bottom:6px; color:var(--accent); }
+.muted { color: var(--muted); }
+.timeline { border-left:3px solid var(--accent); margin-left:20px; padding-left:20px; }
+.timeline-item { position:relative; margin-bottom:18px; }
+.timeline-item::before { content:""; position:absolute; left:-12px; top:0; width:20px; height:20px; background:var(--accent); border-radius:50%; }
+.skill-bar { height:14px; border-radius:8px; background:#1f2937; margin-bottom:12px; overflow:hidden; }
+.skill-fill { height:100%; width:0; border-radius:8px; background: var(--accent2); transition: width 1.5s ease; }
+.stats { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; margin-top:20px; text-align:center; }
+.counter { font-size:32px; font-weight:700; color:var(--accent); }
+footer { text-align:center; padding:20px; background:#101827; border-top:1px solid #1e293b; margin-top:40px; }
+footer a { margin:0 10px; color: var(--accent); transition:0.3s; }
+footer a:hover { opacity:.7; }
+.floating-shape { position:absolute; border-radius:50%; opacity:0.2; animation:float 6s ease-in-out infinite; }
+@keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);} }
+
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Header -->
+<header>
+    <div style="font-weight:700;font-size:22px;color:var(--accent)">Abdelrahman Ali Mohamed</div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-left">
+    <h1>Abdelrahman Ali Mohamed</h1>
+    <p class="lead">
+      Machine Learning Engineer •  
+      Computer & Communications Engineering – Alexandria University  
+    </p>
+
+    <p class="lead">
+      Passionate about building data-driven, AI-powered solutions that solve
+      real-world problems and deliver meaningful insights.
+    </p>
+
+    <button class="btn btn-primary" onclick="window.location.href='#projects'">View My Projects</button>
+  </div>
+
+  <div class="hero-right">
+    <img src="1763685061933.jpeg" alt="Profile Photo">
+  </div>
+</section>
+
+<style>
+/* HERO LAYOUT */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 60px;
+}
+
+/* HERO LEFT CONTENT */
+.hero-left {
+  flex: 1;
+}
+
+.hero-left h1 {
+  font-size: 42px;
+  margin: 0 0 15px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00d4ff, #7c3aed);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-left .lead {
+  color: #94a3b8;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* HERO PHOTO */
+.hero-right {
+  flex: 0 0 auto;
+}
+
+.hero-right img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00d4ff;
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-right img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-left h1 {
+    font-size: 34px;
+  }
+}
+</style>
+
+
+<!-- About Section -->
+<section id="about" class="section">
+<h2>About Me</h2>
+<div class="card">
+Motivated AI/ML engineer with hands-on experience in building data-driven applications and machine learning solutions. Passionate about developing AI-powered tools that deliver actionable insights and solve real-world problems.
+</div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="section">
+<h2>Skills</h2>
+<div class="card">
+<h3>Programming Languages</h3>
+<div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+<p>Python • C • Java</p>
+
+<h3>Machine Learning</h3>
+<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+<p>scikit-learn • Pandas • NumPy • Matplotlib • Seaborn • PyGWalker</p>
+
+<h3>Model Optimization</h3>
+<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+<p>GridSearchCV • RandomizedSearchCV • PCA • RFE • SMOTE • Feature Engineering</p>
+
+<h3>Soft Skills</h3>
+<div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+<p>Analytical • Teamwork • Communication • Problem-Solving</p>
+</div>
+</section>
+
+<!-- Projects Section -->
+<section class="section" id="projects">
+  <h2 style="color:var(--accent)">Projects</h2>
+  <div class="grid" style="gap:25px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+
+    <!-- Project 1: AI Therapist -->
+    <div class="card project" style="transition:transform .3s,box-shadow .3s;">
+      <img src="download (1).jpeg" alt="AI Therapist" style="width:100%;height:260px;object-fit:cover;border-radius:10px;margin-bottom:12px">
+      <h3 style="color:var(--accent);margin-bottom:6px">AI Therapist (NTI Summer Training)</h3>
+      <p class="muted" style="margin-bottom:10px">
+        Participated in NTI Summer Training; responsible for the Machine Learning component of a smart web-based emotional assistant.
+      </p>
+      <ul class="muted" style="margin-bottom:10px;padding-left:18px;">
+        <li>Developed emotion-classification models (Logistic Regression, Linear SVC, Random Forest).</li>
+        <li>Integrated Google Gemini 2.0 Flash for context-aware responses.</li>
+        <li>Dataset augmentation & hyperparameter tuning applied.</li>
+        <li>Evaluated performance using confusion matrices and F1-score.</li>
+      </ul>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+        <span style="background:var(--accent2);color:#fff;padding:4px 10px;border-radius:8px;font-size:12px;">Python</span>
+        <span style="background:var(--accent2);color:#fff;padding:4px 10px;border-radius:8px;font-size:12px;">ML</span>
+        <span style="background:var(--accent2);color:#fff;padding:4px 10px;border-radius:8px;font-size:12px;">Flask</span>
+        <span style="background:var(--accent2);color:#fff;padding:4px 10px;border-radius:8px;font-size:12px;">Gemini 2.0 Flash</span>
+      </div>
+      
+    </div>
+
+    <!-- Project 2: Heart Disease Prediction -->
+    <div class="card project" style="transition:transform .3s,box-shadow .3s;">
+      <img src="ImageForNews_776422_17123165547518811.webp" alt="Heart Disease Prediction" style="width:100%;height:260px;object-fit:cover;border-radius:10px;margin-bottom:12px">
+      <h3 style="color:var(--accent);margin-bottom:6px">Heart Disease Prediction (ML Pipeline)</h3>
+      <p class="muted" style="margin-bottom:10px">
+        Built a complete ML pipeline on the Heart Disease UCI dataset covering preprocessing, feature selection, dimensionality reduction, and model training.
+      </p>
+      <ul class="muted" style="margin-bottom:10px;padding-left:18px;">
+        <li>Models: Logistic Regression, Decision Tree, Random Forest, SVM.</li>
+        <li>Applied K-Means & Hierarchical Clustering for pattern discovery.</li>
+        <li>Optimized models with GridSearchCV & Randomized SearchCV.</li>
+        <li>Deployed best model via Streamlit.</li>
+      </ul>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+        <span style="background:var(--accent2);color:#fff;padding:4px 10px;border-radius:8px;font-size:12px;">Python</span>
+        <span style="background:var(--accent2);color:#fff;padding:4px 10px;border-radius:8px;font-size:12px;">Pandas</span>
+        <span style="background:var(--accent2);color:#fff;padding:4px 10px;border-radius:8px;font-size:12px;">scikit-learn</span>
+        <span style="background:var(--accent2);color:#fff;padding:4px 10px;border-radius:8px;font-size:12px;">Streamlit</span>
+      </div>
+      
+    </div>
+
+    <!-- Add more projects here using the same card structure -->
+
+
+  </div>
+</section>
+
+<style>
+  #projects .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+  }
+</style>
+
+
+<!-- Services Section -->
+<section id="services" class="section">
+<h2>Services Offered</h2>
+<div class="grid">
+<div class="card">AI & ML Application Development</div>
+<div class="card">Data Analysis & Visualization</div>
+<div class="card">Machine Learning Model Optimization</div>
+<div class="card">Web-based ML Solutions</div>
+</div>
+</section>
+
+<!-- Achievements & Certifications -->
+<section class="section" id="achievements">
+  <h2 style="color:var(--accent)">Achievements & Certifications</h2>
+  <div class="grid" style="gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">
+    
+    <div class="card" style="display:flex;align-items:center;gap:12px;transition:transform .3s">
+      <div style="font-size:30px;color:#FFD700">🏆</div>
+      <div>
+        <h3 style="margin:0;color:var(--accent)">NTI Summer Training – ML Project</h3>
+        <p class="muted" style="margin:4px 0">Completed hands-on machine learning projects as part of NTI Summer Training.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;align-items:center;gap:12px;transition:transform .3s">
+      <div style="font-size:30px;color:#00d4ff">📜</div>
+      <div>
+        <h3 style="margin:0;color:var(--accent)">Sprints x Microsoft – AI & ML</h3>
+        <p class="muted" style="margin:4px 0">Participated in AI & Machine Learning program with hands-on exercises.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;align-items:center;gap:12px;transition:transform .3s">
+      <div style="font-size:30px;color:#7c3aed">🎖️</div>
+      <div>
+        <h3 style="margin:0;color:var(--accent)">AWS – Machine Learning Foundations</h3>
+        <p class="muted" style="margin:4px 0">Completed foundational course on AWS ML services and deployment.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;align-items:center;gap:12px;transition:transform .3s">
+      <div style="font-size:30px;color:#FF6B6B">📚</div>
+      <div>
+        <h3 style="margin:0;color:var(--accent)">Google – Python Crash Course (In Progress)</h3>
+        <p class="muted" style="margin:4px 0">Learning Python fundamentals and applying them to small projects.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;align-items:center;gap:12px;transition:transform .3s">
+      <div style="font-size:30px;color:#4ECDC4">🚀</div>
+      <div>
+        <h3 style="margin:0;color:var(--accent)">McKinsey – Forward Program (In Progress)</h3>
+        <p class="muted" style="margin:4px 0">Participating in McKinsey Forward Program to enhance professional skills.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  #achievements .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  }
+</style>
+
+
+<!-- Experience Timeline Section -->
+<section class="section" id="experience">
+  <h2 style="color:var(--accent); margin-bottom:30px;">Experience Timeline</h2>
+  
+  <div class="timeline-container" style="position:relative; display:flex; flex-direction:column; gap:30px;">
+
+    <!-- Timeline Item 1 -->
+    <div class="timeline-item" style="display:flex; align-items:flex-start; gap:20px;">
+      <div class="timeline-marker" style="flex-shrink:0; width:20px; height:20px; background:var(--accent); border-radius:50%; border:3px solid var(--card); margin-top:4px;"></div>
+      <div class="timeline-content">
+        <h3 style="margin:0 0 6px; color:var(--accent);">2022–2023</h3>
+        <p class="muted" style="margin:0">Intro to programming and data structures. Learned fundamentals of C, Python, and problem-solving algorithms.</p>
+      </div>
+    </div>
+
+    <!-- Timeline Item 2 -->
+    <div class="timeline-item" style="display:flex; align-items:flex-start; gap:20px;">
+      <div class="timeline-marker" style="flex-shrink:0; width:20px; height:20px; background:var(--accent); border-radius:50%; border:3px solid var(--card); margin-top:4px;"></div>
+      <div class="timeline-content">
+        <h3 style="margin:0 0 6px; color:var(--accent);">2023–2024</h3>
+        <p class="muted" style="margin:0">Built multiple university-level projects including Hotel Management System and Dictionary (AVL Tree) projects.</p>
+      </div>
+    </div>
+
+    <!-- Timeline Item 3 -->
+    <div class="timeline-item" style="display:flex; align-items:flex-start; gap:20px;">
+      <div class="timeline-marker" style="flex-shrink:0; width:20px; height:20px; background:var(--accent); border-radius:50%; border:3px solid var(--card); margin-top:4px;"></div>
+      <div class="timeline-content">
+        <h3 style="margin:0 0 6px; color:var(--accent);">2024–2025</h3>
+        <p class="muted" style="margin:0">Improved web development and software engineering skills, learned ML frameworks, and deployed AI-powered applications.</p>
+      </div>
+    </div>
+
+    <!-- Timeline Item 4 -->
+    <div class="timeline-item" style="display:flex; align-items:flex-start; gap:20px;">
+      <div class="timeline-marker" style="flex-shrink:0; width:20px; height:20px; background:var(--accent); border-radius:50%; border:3px solid var(--card); margin-top:4px;"></div>
+      <div class="timeline-content">
+        <h3 style="margin:0 0 6px; color:var(--accent);">2025–2026</h3>
+        <p class="muted" style="margin:0">Expanding expertise in Machine Learning, AI, and data-driven applications. Working on collaborative projects and research opportunities.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Vertical Line */
+  .timeline-container::before {
+    content: '';
+    position: absolute;
+    left:10px; /* Align with center of markers */
+    top:0;
+    bottom:0;
+    width:4px;
+    background:var(--accent2);
+    border-radius:2px;
+    opacity:0.4;
+  }
+
+  /* Hover effects */
+  .timeline-item:hover h3 {
+    color: var(--accent2);
+  }
+  .timeline-item:hover p {
+    color: var(--text);
+  }
+</style>
+
+
+<style>
+  /* Timeline Hover Effects */
+  .timeline-item:hover h3 {
+    color: var(--accent2);
+  }
+  .timeline-item:hover p {
+    color: var(--text);
+  }
+</style>
+
+
+<!-- Stats Section -->
+<section class="section">
+<h2>Stats</h2>
+<div class="card stats">
+<div><div class="counter" data-target="2">0</div><p>Major Projects</p></div>
+<div><div class="counter" data-target="5">0</div><p>Courses/Certifications</p></div>
+<div><div class="counter" data-target="400">0</div><p>Hours Learning</p></div>
+</div>
+</section>
+
+
+<!-- Contact Section -->
+    <section id="contact" class="section">
+  <h2 style="color:var(--accent)">Contact Me</h2>
+  <div class="card contact-box" style="display:flex;flex-direction:column;gap:20px;">
+
+    <p class="muted" style="line-height:1.6;">
+      I'm open to new opportunities, collaborations, and projects. Reach out through any of the options below or send a message directly!
+    </p>
+
+    <!-- Interactive Contact Info: Single Line -->
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;">
+      <a href="mailto:abdelrahmanalimahmoud2020@gmail.com" target="_blank" style="flex:1 1 22%;display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;background:linear-gradient(90deg,#4F46E5,#A855F7);color:#fff;text-decoration:none;transition:0.3s;">
+        <i data-lucide="mail" class="w-5 h-5"></i> Email Me
+      </a>
+
+      <a href="https://www.linkedin.com/in/abdelrahman-aly-ai" target="_blank" style="flex:1 1 22%;display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;background:linear-gradient(90deg,#06B6D4,#4F46E5);color:#fff;text-decoration:none;transition:0.3s;">
+        <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
+      </a>
+
+      <a href="tel:+201140767058" style="flex:1 1 22%;display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;background:linear-gradient(90deg,#F59E0B,#F97316);color:#fff;text-decoration:none;transition:0.3s;">
+        <i data-lucide="phone" class="w-5 h-5"></i> Call Me
+      </a>
+
+    </div>
+
+    <!-- Message Form -->
+    <form style="display:grid;gap:14px;margin-top:20px">
+      <div>
+        <label for="contact-name" style="color:var(--muted);font-size:14px">Your Name</label>
+        <input id="contact-name" type="text" placeholder="Enter your name" required style="width:100%;padding:10px;border-radius:8px;background:#0a0f1a;border:1px solid #1e293b;color:var(--text)">
+      </div>
+
+      <div>
+        <label for="contact-email" style="color:var(--muted);font-size:14px">Your Email</label>
+        <input id="contact-email" type="email" placeholder="Enter your email" required style="width:100%;padding:10px;border-radius:8px;background:#0a0f1a;border:1px solid #1e293b;color:var(--text)">
+      </div>
+
+      <div>
+        <label for="contact-message" style="color:var(--muted);font-size:14px">Message</label>
+        <textarea id="contact-message" rows="5" placeholder="Write your message here..." required style="width:100%;padding:10px;border-radius:8px;background:#0a0f1a;border:1px solid #1e293b;color:var(--text)"></textarea>
+      </div>
+
+      <button class="btn btn-primary" type="submit" style="width:160px">Send Message</button>
+    </form>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer>
+<a href="https://linkedin.com/in/abdelrahman-aly-ai" target="_blank">LinkedIn</a>
+
+<p>&copy; 2025 Abdelrahman Ali Mohamed. All Rights Reserved.</p>
+</footer>
+
+</div>
+
+<script>
+// Counters animation
+const counters = document.querySelectorAll('.counter');
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 200;
+        if(count < target){
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 20);
+        } else {
+            counter.innerText = target;
+        }
+    }
+    updateCount();
+});
+</script>
+<script>
+// --- Smooth Fade Animation on Navigation Click ---
+
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+        const targetID = this.getAttribute("href");
+
+        // Fade Out Animation
+        document.body.style.transition = "opacity 0.5s";
+        document.body.style.opacity = 0;
+
+        setTimeout(() => {
+            // Scroll to section
+            document.querySelector(targetID).scrollIntoView({ behavior: "smooth" });
+
+            // Fade In Animation
+            setTimeout(() => {
+                document.body.style.opacity = 1;
+            }, 300);
+        }, 300);
+    });
+});
+</script>
+
+
+</body>
+</html>
